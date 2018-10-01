@@ -5,13 +5,11 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const HappyPack = require('happypack')
 
 const getHappyPackConfig = require('./happypack')
-const config = require('../config')
 const utils = require('./utils')
 
 const env = process.env.NODE_ENV || 'development'
-const apiPrefix = env === 'development' ? config[env].prefix : config[env].prefix
 
-console.log('---------env------:', env, '------apiPrefix-------:', apiPrefix)
+console.log('---------env------:', env)
 
 module.exports = {
   mode: env,
@@ -63,8 +61,7 @@ module.exports = {
     modules: [utils.resolve('node_modules')],
     alias: {
       '@src': utils.resolve('src'),
-      '@components': utils.resolve('src/components'),
-      '@redux': utils.resolve('src/redux')
+      '@components': utils.resolve('src/components')
     }
   },
 
@@ -90,10 +87,6 @@ module.exports = {
         }
       }]
     })),
-
-    new webpack.DefinePlugin({
-      'window.PREFIX': JSON.stringify(apiPrefix)
-    }),
 
     // copy assets
     new CopyWebpackPlugin([
