@@ -13,7 +13,7 @@ module.exports = {
   },
   production: {
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsPublicPath: '/',
+    assetsPublicPath: '/dist/',
     assetsSubDirectory: 'static',
     prefix: '',
     productionSourceMap: false
