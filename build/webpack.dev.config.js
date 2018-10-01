@@ -9,7 +9,7 @@ const baseWebpackConfig = require('./webpack.base.config')
 const config = require('../config')
 
 const env = process.env.NODE_ENV || 'development'
-const url = `http://${config[env].ip}:${config[env].port}`
+const url = `http://${config[env].ip}:${config[env].port}/react-demos`
 
 module.exports = merge(baseWebpackConfig, {
   entry: {

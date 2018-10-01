@@ -15,7 +15,7 @@ export default class App extends React.Component {
     return (
       <div>
         <h3>{this.state.title}</h3>
-        <Link to='/list'>An online demo to compare different impletation of virtual list</Link>(比较不同虚拟列表实现的 demo)
+        <Link to='/react-demos/list'>An online demo to compare different impletation of virtual list</Link>(比较不同虚拟列表实现的 demo)
       </div>
     )
   }

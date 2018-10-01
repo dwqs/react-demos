@@ -20,8 +20,8 @@ const List = () => import(/* webpackChunkName: "list" */ '../general/list/index'
 
 const routes =
   <Switch>
-    <Route exact path='/' component={createContainer(App)} />
-    <Route path='/list' component={createContainer(List)} />
+    <Route exact path='/react-demos' component={createContainer(App)} />
+    <Route path='/react-demos/list' component={createContainer(List)} />
   </Switch>
 
 export default routes
