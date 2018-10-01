@@ -1,6 +1,6 @@
-## react-demo
+## react-demos
 ```shell
-git clone ssh://gitlab@git.garena.com:2222/kang.yuan/react-demo.git
+git clone git@github.com:dwqs/react-demos.git
 
 cd react-demo
 
