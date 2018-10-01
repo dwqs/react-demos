@@ -2,7 +2,7 @@
 ```shell
 git clone git@github.com:dwqs/react-demos.git
 
-cd react-demo
+cd react-demos
 
 npm i
 
