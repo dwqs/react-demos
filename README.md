@@ -4,7 +4,7 @@ git clone git@github.com:dwqs/react-demos.git
 
 cd react-demos
 
-npm i
+npm i && npm run dll
 
 npm run dev
 ```
