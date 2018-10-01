@@ -40,7 +40,7 @@ jspm_packages
 
 .idea
 public/dist
-dist
+dll
 .DS_Store
 .cache
 converage
