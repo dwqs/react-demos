@@ -13,9 +13,11 @@ export default class App extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className='doc'>
         <h3>{this.state.title}</h3>
         <Link to='/react-demos/list'>An online demo to compare different impletation of virtual list</Link>(比较不同虚拟列表实现的 demo)
+        <br />
+        <Link to='/react-demos/dom'>DOMs</Link>(创建 DOM 元素的测试)
       </div>
     )
   }
