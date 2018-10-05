@@ -44,7 +44,8 @@ export default class DOM extends React.Component {
     }
 
     this.setState({
-      complexDOMs: array
+      complexDOMs: array,
+      simpleDOMs: []
     })
   }
 
