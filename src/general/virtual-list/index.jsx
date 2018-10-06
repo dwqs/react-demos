@@ -41,7 +41,6 @@ export default class VirtualizedList extends Component {
     const rect = node.getBoundingClientRect()
     const top = rect.top + window.pageYOffset
 
-    console.log('nnnnnn', top)
     this.cache.push({
       index,
       top,
@@ -99,6 +98,7 @@ export default class VirtualizedList extends Component {
   }
 
   componentDidMount () {
+    // 计算可渲染的元素个数
     this.visibleCount = Math.ceil(window.innerHeight / height)
     this.endIndex = this.startIndex + this.visibleCount
     this.updateVisibleData()
