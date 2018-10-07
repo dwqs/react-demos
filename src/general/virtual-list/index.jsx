@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import Item from './Item'
 
 const height = 60
+const bufferSize = 5
 
 export default class VirtualizedList extends Component {
   constructor (props) {
@@ -99,7 +100,7 @@ export default class VirtualizedList extends Component {
 
   componentDidMount () {
     // 计算可渲染的元素个数
-    this.visibleCount = Math.ceil(window.innerHeight / height)
+    this.visibleCount = Math.ceil(window.innerHeight / height) + bufferSize
     this.endIndex = this.startIndex + this.visibleCount
     this.updateVisibleData()
 
