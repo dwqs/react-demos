@@ -23,11 +23,14 @@ export default class VirtualizedList extends Component {
     this.scrollTop = 0
 
     this.doc = null
+
+    // 缓存已渲染元素的位置信息
     this.cache = []
+    // 缓存锚点元素的位置信息
     this.anchorItem = {
-      index: 0,
-      top: 0,
-      bottom: 0
+      index: 0, // 锚点元素的索引值
+      top: 0, // 锚点元素的顶部距离第一个元素的顶部的偏移量(即 startOffset)
+      bottom: 0 // 锚点元素的底部距离第一个元素的顶部的偏移量
     }
 
     this.handleScroll = this.handleScroll.bind(this)
@@ -35,10 +38,6 @@ export default class VirtualizedList extends Component {
   }
 
   cachePosition (node, index) {
-    if (!node) {
-      return
-    }
-
     const rect = node.getBoundingClientRect()
     const top = rect.top + window.pageYOffset
 
@@ -49,6 +48,7 @@ export default class VirtualizedList extends Component {
     })
   }
 
+  // 滚动事件处理函数
   handleScroll (e) {
     if (!this.doc) {
       // 兼容 iOS Safari/Webview
@@ -71,14 +71,11 @@ export default class VirtualizedList extends Component {
     this.scrollTop = scrollTop
   }
 
+  // 计算 startIndex 和 endIndex
   updateBoundaryIndex (scrollTop) {
     scrollTop = scrollTop || 0
-
+    // 用户正常滚动下，根据 scrollTop 找到新的锚点元素位置
     const anchorItem = this.cache.find(item => item.bottom >= scrollTop)
-
-    if (!anchorItem) {
-      return
-    }
 
     this.anchorItem = {
       ...anchorItem
