@@ -8,7 +8,7 @@ export default class Item extends Component {
 
   render () {
     /* eslint-disable-next-line */
-    const index = this.props.index
+    const {index, item} = this.props
 
     return (
       <div className='list-item' ref={node => { this.node = node }}>
