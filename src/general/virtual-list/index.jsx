@@ -44,7 +44,7 @@ export default class VirtualizedList extends Component {
     this.cache.push({
       index,
       top,
-      bottom: top + rect.height
+      bottom: top + height
     })
   }
 
@@ -76,6 +76,11 @@ export default class VirtualizedList extends Component {
     scrollTop = scrollTop || 0
     // 用户正常滚动下，根据 scrollTop 找到新的锚点元素位置
     const anchorItem = this.cache.find(item => item.bottom >= scrollTop)
+
+    if (!anchorItem) {
+      // 滚的太快，找不到锚点元素，这个暂不处理
+      return
+    }
 
     this.anchorItem = {
       ...anchorItem
