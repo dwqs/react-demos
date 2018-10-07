@@ -20,6 +20,8 @@ export default class App extends React.Component {
         <Link to='/react-demos/dom'>DOMs</Link>(创建 DOM 元素的测试)
         <br />
         <Link to='/react-demos/virtual'>The virtual list whose item has the same height</Link>(列表项等高的虚拟列表 demo)
+        <br />
+        <Link to='/react-demos/dynamic'>The virtual list whose item has dynamic height</Link>(列表项不等高的虚拟列表 demo)
       </div>
     )
   }

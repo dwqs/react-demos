@@ -19,6 +19,7 @@ const App = () => import(/* webpackChunkName: "main" */ '../general/app/index')
 const List = () => import(/* webpackChunkName: "list" */ '../general/list/index')
 const Dom = () => import(/* webpackChunkName: "dom" */ '../general/dom/index')
 const Virtual = () => import(/* webpackChunkName: "virtual" */ '../general/virtual-list/index')
+const DynamicVirtual = () => import(/* webpackChunkName: "dynamic" */ '../general/dynamic-virtual-list/index')
 
 const routes =
   <Switch>
@@ -26,6 +27,7 @@ const routes =
     <Route path='/react-demos/list' component={createContainer(List)} />
     <Route path='/react-demos/dom' component={createContainer(Dom)} />
     <Route path='/react-demos/virtual' component={createContainer(Virtual)} />
+    <Route path='/react-demos/dynamic' component={createContainer(DynamicVirtual)} />
   </Switch>
 
 export default routes
