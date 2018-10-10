@@ -1,25 +1,12 @@
 import '../virtual-list/index.less'
 
-import faker from 'faker/locale/zh_CN'
 import React, { Component } from 'react'
 
 import Item from './Item'
+import fakerData from '../list/fakerData'
 
 const estimatedItemHeight = 80
 const bufferSize = 5
-
-function fakerData () {
-  const a = []
-  for (let i = 0; i < 1000; i++) {
-    a.push({
-      id: i,
-      words: faker.lorem.words(),
-      paragraphs: faker.lorem.sentences()
-    })
-  }
-
-  return a
-}
 
 export default class VirtualizedList extends Component {
   constructor (props) {
@@ -31,7 +18,7 @@ export default class VirtualizedList extends Component {
       visibleData: []
     }
 
-    this.data = fakerData()
+    this.data = fakerData(0, false)
 
     this.startIndex = 0
     this.endIndex = 0
