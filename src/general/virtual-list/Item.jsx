@@ -11,7 +11,7 @@ export default class Item extends Component {
     const {index, item} = this.props
 
     return (
-      <div className='list-item' ref={node => { this.node = node }}>
+      <div className='list-item' style={{ height: '60px' }} ref={node => { this.node = node }}>
         <p>#${index} eligendi voluptatem quisquam</p>
         <p>Modi autem fugiat maiores. Doloremque est sed quis qui nobis. Accusamus dolorem aspernatur sed rem.</p>
       </div>
