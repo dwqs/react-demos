@@ -23,16 +23,6 @@ export default class TinyVirtualList extends React.Component {
 
     this.renderItem = this.renderItem.bind(this)
     this.getItemSize = this.getItemSize.bind(this)
-    this.cacheNodeHeight = this.cacheNodeHeight.bind(this)
-  }
-
-  cacheNodeHeight (node, index) {
-    this.cacheHeight[index] = node.offsetHeight
-
-    if (this.list) {
-      this.list.recomputeSizes(index)
-      this.list.forceUpdate()
-    }
   }
 
   renderItem ({ index, style }) {
@@ -44,13 +34,14 @@ export default class TinyVirtualList extends React.Component {
         index={index}
         item={item}
         style={style}
-        cacheNodeHeight={this.cacheNodeHeight}
       />
     )
   }
 
   getItemSize (index) {
-    return this.cacheHeight[index] || estimatedItemSize
+    let random = Math.random()
+    random = random >= 0.5 ? random : -random
+    return estimatedItemSize + random * estimatedItemSize
   }
 
   componentDidMount () {

@@ -3,11 +3,6 @@ import React, { Component } from 'react'
 import Image from '../Image'
 
 export default class Item extends Component {
-  componentDidMount () {
-    /* eslint-disable-next-line */
-    this.props.cacheNodeHeight(this.node, this.props.index)
-  }
-
   render () {
     /* eslint-disable-next-line */
     const {index, item, style} = this.props
