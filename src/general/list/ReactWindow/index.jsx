@@ -26,7 +26,11 @@ const Row = ({ index, style }) => {
 
 const rowHeights = new Array(100)
   .fill(true)
-  .map(() => 180 + Math.round(Math.random() * 50))
+  .map(() => {
+    let random = Math.random()
+    random = random >= 0.5 ? random : -random
+    return 180 + random * 180
+  })
 const getItemSize = index => rowHeights[index]
 
 export default class WindowList extends React.Component {
