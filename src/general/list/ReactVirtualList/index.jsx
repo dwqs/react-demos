@@ -1,8 +1,6 @@
 import React from 'react'
 import ReactVirtualList from 'react-virtual-list'
 
-import Image from '../Image'
-
 import fakerData from '../fakerData'
 
 /**
@@ -19,7 +17,6 @@ const MyList = ({ virtual, itemHeight }) => {
           return (
             <div className='list-item' key={item.id} style={{ height: itemHeight }}>
               <p>#{index} {item.words}</p>
-              <Image src={item.image} alt={item.id} />
               <p>{item.paragraphs}</p>
             </div>
           )
