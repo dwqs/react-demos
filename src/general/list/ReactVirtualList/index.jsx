@@ -13,10 +13,10 @@ const MyList = ({ virtual, itemHeight }) => {
   return (
     <div style={virtual.style}>
       {
-        virtual.items.map((item, index) => {
+        virtual.items.map((item) => {
           return (
             <div className='list-item' key={item.id} style={{ height: itemHeight }}>
-              <p>#{index} {item.words}</p>
+              <p>#{item.id} {item.words}</p>
               <p>{item.paragraphs}</p>
             </div>
           )
@@ -33,7 +33,7 @@ export default class VirtualList extends React.Component {
     return (
       <MyVirtualList
         items={fakerData()}
-        itemHeight={180}
+        itemHeight={135}
       />
     )
   }
