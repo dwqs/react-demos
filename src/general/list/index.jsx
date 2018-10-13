@@ -53,21 +53,21 @@ export default class List extends React.Component {
             <input type='radio' checked={this.state.active === '0'} value='0' id='0' onChange={this.change} />
             <a href='https://github.com/dwqs/react-virtual-list' target='_blank' rel='noopener noreferrer'>VirtualizedList</a>
           </label>
-          <label htmlFor='1'>
-            <input type='radio' checked={this.state.active === '1'} value='1' id='1' onChange={this.change} />
-            <a href='https://github.com/developerdizzle/react-virtual-list' target='_blank' rel='noopener noreferrer'>ReactVirtualList</a>
-          </label>
           <label htmlFor='2'>
             <input type='radio' checked={this.state.active === '2'} value='2' id='2' onChange={this.change} />
             <a href='https://github.com/clauderic/react-tiny-virtual-list' target='_blank' rel='noopener noreferrer'>TinyVirtualList</a>
           </label>
-          <label htmlFor='3'>
-            <input type='radio' checked={this.state.active === '3'} value='3' id='3' onChange={this.change} />
-            <a href='https://github.com/bvaughn/react-virtualized' target='_blank' rel='noopener noreferrer'>ReactVirtualized</a>
-          </label>
           <label htmlFor='4'>
             <input type='radio' checked={this.state.active === '4'} value='4' id='4' onChange={this.change} />
             <a href='https://github.com/bvaughn/react-window' target='_blank' rel='noopener noreferrer'>ReactWindow</a>
+          </label>
+          <label htmlFor='1'>
+            <input type='radio' checked={this.state.active === '1'} value='1' id='1' onChange={this.change} />
+            <a href='https://github.com/developerdizzle/react-virtual-list' target='_blank' rel='noopener noreferrer'>ReactVirtualList</a>
+          </label>
+          <label htmlFor='3'>
+            <input type='radio' checked={this.state.active === '3'} value='3' id='3' onChange={this.change} />
+            <a href='https://github.com/bvaughn/react-virtualized' target='_blank' rel='noopener noreferrer'>ReactVirtualized</a>
           </label>
         </p>
         <div className='list-container' id='list-container'>
