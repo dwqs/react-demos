@@ -61,7 +61,6 @@ export default class ReactVirtualizedList extends React.Component {
               rowRenderer={this.renderItem}
               overscanRowCount={3}
               estimatedRowSize={180}
-              // rowHeight={getItemSize}
               rowHeight={this.cache.rowHeight}
               rowCount={this.state.data.length}
             />
