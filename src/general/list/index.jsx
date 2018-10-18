@@ -7,6 +7,7 @@ import ReactVirtualList from './ReactVirtualList/index'
 import TinyVirtualList from './TinyVirtualList/index'
 import WindowList from './ReactWindow/index'
 import ReactVirtualizedList from './ReactVirtualizedList/index'
+import ReactVirtualizedListWithImage from './ReactVirtualizedList/withImage'
 
 export default class List extends React.Component {
   constructor (props) {
@@ -41,6 +42,8 @@ export default class List extends React.Component {
         return <ReactVirtualizedList />
       case '4':
         return <WindowList />
+      case '5':
+        return <ReactVirtualizedListWithImage />
     }
   }
 
@@ -67,7 +70,11 @@ export default class List extends React.Component {
           </label>
           <label htmlFor='3'>
             <input type='radio' checked={this.state.active === '3'} value='3' id='3' onChange={this.change} />
-            <a href='https://github.com/bvaughn/react-virtualized' target='_blank' rel='noopener noreferrer'>ReactVirtualized</a>
+            <a href='https://github.com/bvaughn/react-virtualized' target='_blank' rel='noopener noreferrer'>ReactVirtualized</a>(without image)
+          </label>
+          <label htmlFor='5'>
+            <input type='radio' checked={this.state.active === '5'} value='5' id='5' onChange={this.change} />
+            <a href='https://github.com/bvaughn/react-virtualized' target='_blank' rel='noopener noreferrer'>ReactVirtualized</a>(with image)
           </label>
         </p>
         <div className='list-container' id='list-container'>
