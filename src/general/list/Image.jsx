@@ -14,6 +14,11 @@ export default class Image extends Component {
     this.setState({
       loadEnd: true
     })
+
+    /* eslint-disable-next-line */
+    if (typeof this.props.onLoad === 'function') {
+      this.props.onLoad()
+    }
   }
 
   render () {
