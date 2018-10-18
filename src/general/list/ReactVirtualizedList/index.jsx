@@ -1,8 +1,6 @@
 import React from 'react'
 import { List, AutoSizer, CellMeasurer, CellMeasurerCache } from 'react-virtualized'
 
-import Image from '../Image'
-
 import fakerData from '../fakerData'
 
 // const rowHeights = new Array(100)
@@ -18,20 +16,20 @@ export default class ReactVirtualizedList extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      data: fakerData(),
+      data: fakerData(0, false),
       hasMore: true
     }
 
     this.cache = new CellMeasurerCache({
       fixedWidth: true,
-      defaultHeight: 180
+      defaultHeight: 135
     })
 
     this.renderItem = this.renderItem.bind(this)
   }
 
   renderItem ({ index, key, style, parent }) {
-    const { id, image, words, paragraphs } = this.state.data[index]
+    const { words, paragraphs } = this.state.data[index]
     return (
       <CellMeasurer
         key={key}
@@ -42,7 +40,6 @@ export default class ReactVirtualizedList extends React.Component {
       >
         <div className='list-item' style={style}>
           <p>#{index} {words}</p>
-          <Image src={image} alt={id} />
           <p>{paragraphs}</p>
         </div>
       </CellMeasurer>
